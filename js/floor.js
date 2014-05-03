@@ -1,49 +1,25 @@
 var floorData = {};
 
 $(function() {
-  //getFloorData('estancia');
-  drawFloor();
-  $(".item").resizable({ 
-  	minHeight: 20, 
-  	maxHeight: 20,
-  	ghost: true,
-  	stop: function( event, ui ) {
-  	  var item_id = ui.element.context.id;
-  	  var aux = item_id.split('_');
-  	  var next_item = $('#' + aux[0] + '_' + aux[1] + '_' + (parseFloat(aux[2]) + 1)); 
-  	  next_item.width(next_item.width() + ui.originalSize.width - ui.size.width);	
-  	  // TODO: Save
-  	} 
-  });
+  getFloorData('estancia');
 });
-
-var floorData = {
-  size: 800,
-  rows: [
-    {
-	  size: 800,
-	  items: [
-        {size: 0.2, damage: 1},
-        {size: 0.5, damage: 2},
-        {size: 0.1, damage: 0},
-        {size: 0.2, damage: 3}
-	  ] 
-	},
-	{
-	  size: 800,
-	  items: [
-        {size: 0.1, damage: 0},
-        {size: 0.4, damage: 5},
-        {size: 0.2, damage: 1},
-        {size: 0.3, damage: 2}
-	  ] 
-	}
-  ]
-}
 
 function getFloorData(room) {
   $.getJSON('data/' + room + '.json', function(data) {
     floorData = data;
+    drawFloor();
+    $(".item").resizable({ 
+      minHeight: 20, 
+      maxHeight: 20,
+      ghost: true,
+      stop: function( event, ui ) {
+        var item_id = ui.element.context.id;
+        var aux = item_id.split('_');
+        var next_item = $('#' + aux[0] + '_' + aux[1] + '_' + (parseFloat(aux[2]) + 1)); 
+        next_item.width(next_item.width() + ui.originalSize.width - ui.size.width); 
+        // TODO: Save
+      } 
+    });
   });
 }
 
