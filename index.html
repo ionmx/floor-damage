@@ -6,9 +6,13 @@
   <link rel="stylesheet" href="css/bootstrap-theme.css">
   <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.css">
   <link rel="stylesheet" href="css/floor.css">
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui-1.10.4.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/floor.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-inverse .navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -21,26 +25,27 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Rec. Hijos</a></li>
-          <li><a href="#">Estancia</a></li>
-          <li><a href="#">Rec. Principal</a></li>
-          <li><a href="#">Vestidor</a></li>
-          <li><a href="#">Planta Baja</a></li>
+        <ul id="nav-floor" class="nav navbar-nav">
+          <li><a id="room-hijos" class="room-link" href="#hijos" data-room="hijos">Rec. Hijos</a></li>
+          <li><a id="room-estancia" class="room-link" href="#estancia" data-room="estancia">Estancia</a></li>
+          <li><a id="room-principal" class="room-link" href="#principal" data-room="principal">Rec. Principal</a></li>
+          <li><a id="room-vestidor" class="room-link" href="#vestidor" data-room="vestidor">Vestidor</a></li>
+          <li><a id="room-baja" class="room-link" href="#baja" data-room="baja">Planta Baja</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="row">
+  <div class="row" id="workarea">
     <div class="col-md-12">
+      <div id="room-name"></div>
+      <div id="left-panel">
+        <div id="room-stats"></div>
+        <div id="room-actions"></div>
+      </div>
       <div id="floor"></div>
+
     </div>
   </div>
-
-  <script src="js/jquery-1.10.2.js"></script>
-  <script src="js/jquery-ui-1.10.4.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/floor.js"></script>
 </body>
 </html>
