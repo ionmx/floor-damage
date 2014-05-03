@@ -1,0 +1,20 @@
+#floor { 
+  border: 1px solid #000;
+  margin: 20px;
+}
+.floor-row {
+  display: block;
+}
+
+.item, .last-item {
+  height: 20px;
+  display: block;
+  float: left;
+}
+
+.damage_0 { background: #a1e42f; }
+.damage_1 { background: #ff0; }
+.damage_2 { background: #fc0; }
+.damage_3 { background: #f70; }
+.damage_4 { background: #b00; }
+.damage_5 { background: #600; }
